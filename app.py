@@ -1,9 +1,8 @@
-import os
-
 from flask import Flask, render_template
 from random import randrange
 import requests
 import json
+import os
 
 app = Flask(__name__)
 
