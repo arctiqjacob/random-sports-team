@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Sports Team</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            margin: 0 auto;
+            margin-top: 5%;
+            width: 500px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="w3-row-padding w3-center w3-margin-top">
+        <div class="w3-card-4">
+            <div class="w3-container w3-center">
+                <img style="width: 100px; margin-top: 10%;" src="https://www.nhlshop.ca/content/ws/69355/NHL_{{ team_name }}_Logo_200x200.svg">
+                <h3>{{ response.teams.0.name }}</h3>
+                <p>First Year of Play: {{ response.teams.0.firstYearOfPlay }}</p>
+                <p>Arena: {{ response.teams.0.venue.name }}</p>
+                <p>City: {{ response.teams.0.venue.city }}</p>
+                <p>Division: {{ response.teams.0.division.name }}</p>
+                <p>Conference: {{ response.teams.0.conference.name }}</p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
