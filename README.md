@@ -1,7 +1,7 @@
 # Random Sports Team
 Demo Python application showing random NHL Sports teams.
 
-![application](application.png "Application")
+![application](images/application.png "Application")
 
 ## How to Build
 ```shell
