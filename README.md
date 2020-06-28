@@ -1,6 +1,8 @@
 # Random Sports Team
 Demo Python application showing random NHL Sports teams.
 
+![application](application.png "Application")
+
 ## How to Build
 ```shell
 $ docker build --tag random-sports-team .
