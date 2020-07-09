@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-sports-team
+  namespace: random-sports-team
+  labels:
+    app: random-sports-team
+spec:
+  selector:
+    matchLabels:
+      app: random-sports-team
+  template:
+    metadata:
+      labels: 
+        app: random-sports-team
+    spec:
+      containers:
+      - name: random-sports-team
+        image: jacobmammoliti/random-sports-team:latest
+        env:
+        - name: PORT
+          value: "8080"
+        ports:
+        - containerPort: 8080
