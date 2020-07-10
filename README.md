@@ -2,6 +2,7 @@
 Demo Python application showing random sports teams. The sport is controlled by the `SPORT` environment variable. Defaults to `NHL` if no environment variable is set.
 
 ![application](images/application.png "Application")
+![application2](images/application2.png "Application2")
 
 ## How to Build
 ```shell
