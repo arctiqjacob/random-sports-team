@@ -12,7 +12,6 @@ NHLAPI = "https://statsapi.web.nhl.com/api/v1/teams/"
 def index():
     response = requests.get(NHLAPI + str(randrange(1,30))).json()
     team_name = response['teams'][0]['name'].replace(" ", "_").lower()
-
     return render_template('index.html', response=response, team_name=team_name)
 
 @app.route('/health')
