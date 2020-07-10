@@ -1,18 +1,19 @@
 from flask import Flask, render_template
-from random import randrange
+import random
 import requests
 import json
 import os
 
 app = Flask(__name__)
 
-NHLAPI = "https://statsapi.web.nhl.com/api/v1/teams/"
+SPORTSAPI = 'https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l='
+SPORT=os.environ.get('SPORT', 'NHL')
 
 @app.route('/')
 def index():
-    response = requests.get(NHLAPI + str(randrange(1,30))).json()
-    team_name = response['teams'][0]['name'].replace(" ", "_").lower()
-    return render_template('index.html', response=response, team_name=team_name)
+    response = requests.get(SPORTSAPI+SPORT).json()
+    random_team = random.choice(response['teams'])
+    return render_template('index.html', random_team=random_team)
 
 @app.route('/health')
 def healthz():
