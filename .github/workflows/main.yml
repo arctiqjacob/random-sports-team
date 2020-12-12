@@ -37,7 +37,7 @@ jobs:
           waypoint_server_ui: 'https://34.121.201.122:9702'
           waypoint_server_token: ${{ secrets.WAYPOINT_SERVER_TOKEN }}
           workspace: default
-      - uses: hashicorp/action-waypoint
+      - uses: hashicorp/action-waypoint@main
         name: Build
         with:
           operation: build
@@ -51,7 +51,7 @@ jobs:
           version: '0.0.1-beta1'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workspace: default
-      - uses: hashicorp/action-waypoint
+      - uses: hashicorp/action-waypoint@main
         name: Release
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
