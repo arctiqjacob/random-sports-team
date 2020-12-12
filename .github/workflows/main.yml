@@ -27,12 +27,35 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        
-      - uses: hashicorp/action-setup-waypoint@main
+      - uses: hashicorp/action-waypoint@main
+        name: Setup
         with:
-          version: '0.1.0'
-
-      - run: waypoint init
-      - run: waypoint build
+          version: '0.0.1-beta1'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          waypoint_server_address: '34.121.201.122:9701'
+          waypoint_server_ui: 'https://34.121.201.122:9702'
+          waypoint_server_token: ${{ secrets.WAYPOINT_SERVER_TOKEN }}
+          workspace: default
+      - uses: hashicorp/action-waypoint
+        name: Build
+        with:
+          operation: build
+          version: '0.0.1-beta1'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workspace: default
+      - uses: hashicorp/action-waypoint
+        name: Deploy
+        with:
+          operation: deploy
+          version: '0.0.1-beta1'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workspace: default
+      - uses: hashicorp/action-waypoint
+        name: Release
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          operation: release
+          version: '0.0.1-beta1'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workspace: default
