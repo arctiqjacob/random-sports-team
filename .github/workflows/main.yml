@@ -44,7 +44,7 @@ jobs:
           version: '0.0.1-beta1'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workspace: default
-      - uses: hashicorp/action-waypoint
+      - uses: hashicorp/action-waypoint@main
         name: Deploy
         with:
           operation: deploy
