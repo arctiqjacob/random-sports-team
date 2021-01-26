@@ -4,20 +4,13 @@ Demo Python application showing random sports teams. The sport is controlled by 
 ![application](images/application.png "Application")
 ![application2](images/application2.png "Application2")
 
-## How to Build
+## Build with Docker
 ```shell
-$ docker build --tag random-sports-team .
-
-$ docker tag random-sports-team jacobmammoliti/random-sports-team
+$ docker build docker build --tag jacobmammoliti/random-sports-team:<version> .
+...
+Successfully tagged jacobmammoliti/random-sports-team:2.0
 
 $ docker push jacobmammoliti/random-sports-team
-```
-
-## Deploy into Kubernetes
-```shell
-$ kubectl create deployment random-sports-team --image=jacobmammoliti/random-sports-team
-
-$ kubectl expose deployment random-sports-team --port 8080
-
-$ kubectl port-forward svc/random-sports-team 8080:
+...
+2.0: digest:...
 ```

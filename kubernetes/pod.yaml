@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-sports-team
+spec:
+  containers:
+    - name: random-sports-team
+      image: jacobmammoliti/random-sports-team:2.0
+      imagePullPolicy: Always
+      env:
+        - name: SPORT
+          value: 'NHL'
+      ports:
+        - containerPort: 8080
+          name: http

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
-            margin: 0 auto;
+            margin: auto;
             margin-top: 5%;
             width: 500px;
         }
@@ -17,9 +17,9 @@
             <div class="w3-container w3-center">
                 <img style="width: 125px; margin-top: 10%;" src="{{ random_team.strTeamBadge }}">
                 <h3>{{ random_team.strTeam }}</h3>
-                <p>First Year of Play: {{ random_team.intFormedYear }}</p>
-                <p>Arena: {{ random_team.strStadium }}</p>
-                <p>City: {{ random_team.strStadiumLocation }}</p>
+                <p><strong>First Year of Play:</strong> {{ random_team.intFormedYear }}</p>
+                <p><strong>Arena:</strong> {{ random_team.strStadium }}</p>
+                <p><strong>City:</strong> {{ random_team.strStadiumLocation }}</p>
             </div>
         </div>
     </div>

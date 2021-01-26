@@ -18,7 +18,7 @@ spec:
       - name: random-sports-team
         image: jacobmammoliti/random-sports-team:latest
         env:
-        - name: PORT
-          value: "8080"
+        - name: SPORT
+          value: 'NHL'
         ports:
         - containerPort: 8080
